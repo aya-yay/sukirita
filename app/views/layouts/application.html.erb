@@ -1,15 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
     <title>Sukirita</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+
+    <%= yield :css %>
+
+    <%= javascript_pack_tag 'application' %>
+
   </head>
 
   <body>
-    <%= yield %>
+    <main role="main">
+      <%= yield %>
+    </main>
   </body>
 </html>
