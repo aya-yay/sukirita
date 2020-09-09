@@ -12,7 +12,7 @@ h1, h2, h3, h4, h5, h6, p, div {
 
 body {
   font-family: 'いろはマル', 'Hiragino Kaku Gothic ProN W3', sans-serif;
-  background: silver;
+  background: #F5F5F5;
 }
 
 li {
@@ -89,9 +89,9 @@ a {
 // ---------main/--------------------------------------------------------------
 
 .main-container {
-  // height: 100vh;
+  height: 100vh;
   margin: 0 200px;
-  padding-top: 100px; 
+  padding-top: 295px; 
   background: white;
   text-align: center;
 }
@@ -124,3 +124,50 @@ a {
 
 
 // ----------footer/--------------------------------------------------------------
+
+
+
+// ------------koes.index----------------------------------------------------------
+
+.koes-container {
+  padding-top: 100px;
+  text-align: center;
+  overflow: scroll; 
+}
+
+.donokoe {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.koe-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.koe-form01 {
+  height: 100px;
+  width: 400px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  outline: none;
+  margin-bottom: 10px;
+}
+
+.post{
+  border: 1px solid;
+  width: 400px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+.post-date {
+  color: gray;
+}
+
+.koe-form2 {
+  margin-bottom: 50px;
+}
+
+
