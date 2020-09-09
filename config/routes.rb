@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-
+  root to: 'gifts#index'
   resources :users
   resources :gifts
-
-  root to: 'gifts#index'
-
+  resources :koes, only: [:index, :create]
+ 
 end
