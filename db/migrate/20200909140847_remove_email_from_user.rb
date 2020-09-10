@@ -1,4 +1,4 @@
-class RemoveEmailFromUsers < ActiveRecord::Migration[6.0]
+class RemoveEmailFromUser < ActiveRecord::Migration[6.0]
   def change
     remove_column :users, :email, :string
   end
