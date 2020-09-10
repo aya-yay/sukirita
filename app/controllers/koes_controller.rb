@@ -5,8 +5,14 @@ class KoesController < ApplicationController
 
 
   def create
-    # binding.pry
-    Koe.create(text: params[:text])
+    binding.pry
+    Koe.create(koe_params)
     redirect_to action: :index
   end
+
+  private
+  def koe_params
+    params.permit(:text).merge(user_id: current_user.id)
+  end
+
 end

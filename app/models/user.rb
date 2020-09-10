@@ -1,11 +1,11 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :authentication_keys => [:nickname]
 
   validates_uniqueness_of :nickname
   validates_presence_of :nickname
+  
+  has_many :koes
 
   #nicknameを利用してログインするようにオーバーライド
   def self.find_first_by_auth_conditions(warden_conditions)
