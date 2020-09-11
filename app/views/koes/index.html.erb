@@ -18,7 +18,7 @@
             <ul class='lists-right'>
               <% if user_signed_in? %>
                 <li>
-                  <%= link_to current_user.nickname, "#", class: "user-nickname" %>
+                  <%= link_to current_user.nickname, "/users/#{current_user.id}", class: "user-nickname" %>
                 </li>
                 <li>
                   <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
@@ -40,10 +40,14 @@
       <div class="donokoe-container">
         <p class="donokoe">どの声がきこえる？</p>
         <div class="koe-form">
-          <%= form_with url:  "/koes", method: :post, local: true, id: "form" do |form| %>
+
+          <%# <%= form_with( url: "/koes", id: "form", local: true) do |form| %>
+          <%= form_with(model: @koe, id: "form", local: true) do |form| %>
+
           <div class="koe-form1">
-            <%= form.text_area :text, id: "content", class: "koe-form01" %>
+            <%= form.text_area :text, id: "content", class: "koe-form01", rows: "10", cols: "16", maxlength: "100" %>
           </div>
+
           <div class="koe-form2">
             <%= form.submit 'つぶやく' , id: "submit" %>
           </div>
@@ -51,20 +55,89 @@
           <div id="list"></div>
         </div>
 
+
+          <%# --------投稿された声↓↓-------- %>
+
+
         <% @koes.each do |koe| %>
-        <div class="post">
-        <%# data-id=<%= koe.id %>
-          <div class="post-date">
-            投稿日時： <%= koe.created_at %>
-            <%# 投稿日時： <%= l koe.created_at %>
+          <div class="post">
+
+            <%# data-id=<%= koe.id %>
+            <div class="post-date">
+              <%= koe.created_at %>
+            </div>
+
+            <div class="post-content">
+              <%= koe.text %>
+            </div>
+    
+            <% if user_signed_in? && current_user.id == koe.user_id %>
+
+              <div class="under-menu">
+
+                <span>
+                  <a class="username" href="/users/<%= koe.user.id %>">
+                    <%= koe.user.nickname %>
+                  </a>
+                </span>
+
+                <ul class="only-user">
+                  <li>
+                    <%= link_to '声をきく', ko_path(koe.id), method: :get %>
+                  </li>
+                  <li>
+                    <%= link_to edit_ko_path(koe.id), method: :get do %>
+                      <i class="far fa-edit"></i>
+                    <% end %>
+                  </li>
+                  <li>
+                    <%= link_to ko_path(koe.id), method: :delete do %>
+                      <i class="fas fa-trash-alt"></i>
+                    <% end %>
+                  </li>
+                </ul>
+
+              </div>
+            <% end %>
+            
+
+        
           </div>
-          <div class="post-content">
-            <%= koe.text %>
-          </div>
-        </div>
         <% end %>
 
       </div>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
 
       <footer>
         <div class="footer-container">

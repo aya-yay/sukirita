@@ -1,5 +1,6 @@
 <h1>新規投稿ページ</h1>
-<%= form_with url: "/koes", method: :post, local: true do |form| %>
+
+<%= form_with(model: @koe, local: true) do |form| %>
   <%= form.text_field :text %>
   <%= form.submit '投稿する' %>
 <% end %>

@@ -1,3 +1,5 @@
+// -------------common-------------------
+
 // Place all the styles related to the gifts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
@@ -21,10 +23,6 @@ li {
 
 a {
   text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 // ----------header----------------------------------------
@@ -105,9 +103,6 @@ a {
   font-size: 24px;
 }
 
-
-
-
 // -------------main/----------------------------------------------------------
 // ------------------footer----------------------------------------------------
 
@@ -163,40 +158,44 @@ a {
   margin-bottom: 10px;
 }
 
-.koe-form2 {
-  margin-bottom: 50px;
-}
-
 .post{
   border: 1px solid;
   width: 400px;
   margin: 0 auto;
   margin-bottom: 50px;
-  padding: 20px 30px 8px 30px;
-  border-radius: 10px;
 }
 
-.post-content {
-  padding-bottom: 20px;
+.post-date {
+  color: gray;
 }
 
-
-.under-menu {
-  display: flex;
-  justify-content: space-between;
-  background-color:#f5f5f5;
+.koe-form2 {
+  margin-bottom: 50px;
 }
 
-
-.only-user {
-  list-style: none;
-  display: flex; 
-  font-size: 13px; 
+// --------------show--------------------
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+.post-container {
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+  padding-top: 150px;
+}
 
-.only-user li {
-  padding-left: 15px;
+.content-post {
+  background-color: white;
+  width: 500px;
+  height: 230px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 40px 40px 0px 40px;
+  border-radius: 15px;
+  position: relative;
 }
 
 .post-date {
@@ -205,3 +204,31 @@ a {
   color: gray;
   margin-bottom: 20px;
 }
+
+.content-post p {
+  margin-bottom: 20px;
+  background-color:#f5f5f5;
+}
+
+.under-menu {
+  display: flex;
+  justify-content: space-between;
+  background-color:#f5f5f5;
+  // align-items: flex-end;
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+}
+
+.only-user {
+  list-style: none;
+  display: flex;  
+}
+
+
+.only-user li {
+  padding-left: 15px;
+}
+
+
+
