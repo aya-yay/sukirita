@@ -9,10 +9,6 @@ class KoesController < ApplicationController
     # koe = Koe.find(params[:id])
   end
 
-  def new
-    @koe = Koe.new
-  end
-
 
   def create
     @koe = Koe.new(koe_params)
@@ -21,8 +17,6 @@ class KoesController < ApplicationController
     # binding.pry
 
     redirect_to action: :index
-    # if @koe.valid?
-    #    @koe.save
   end
 
   def show
