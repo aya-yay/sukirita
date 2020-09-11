@@ -23,10 +23,6 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 // ----------header----------------------------------------
 
 .header-container {
@@ -98,15 +94,11 @@ a {
   padding-top: 295px; 
   background: white;
   text-align: center;
-  overflow: scroll; 
 }
 
 .main-container p {
   font-size: 24px;
 }
-
-
-
 
 // -------------main/----------------------------------------------------------
 // ------------------footer----------------------------------------------------
@@ -163,45 +155,17 @@ a {
   margin-bottom: 10px;
 }
 
-.koe-form2 {
-  margin-bottom: 50px;
-}
-
 .post{
   border: 1px solid;
   width: 400px;
   margin: 0 auto;
   margin-bottom: 50px;
-  padding: 20px 30px 8px 30px;
-  border-radius: 10px;
-}
-
-.post-content {
-  padding-bottom: 20px;
-}
-
-
-.under-menu {
-  display: flex;
-  justify-content: space-between;
-  background-color:#f5f5f5;
-}
-
-
-.only-user {
-  list-style: none;
-  display: flex; 
-  font-size: 13px; 
-}
-
-
-.only-user li {
-  padding-left: 15px;
 }
 
 .post-date {
-  font-size: 11px;
-  text-align: left;
   color: gray;
-  margin-bottom: 20px;
+}
+
+.koe-form2 {
+  margin-bottom: 50px;
 }

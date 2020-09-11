@@ -1,0 +1,103 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag 'edit' %>
+<% end %>
+
+
+<!DOCTYPE html>
+  <body>
+
+    <div class="koes-container">
+
+      <header>
+        <div class="header-container">
+          
+          <div class="header-left">
+            <%= link_to "つながるぽすと", root_path, class: "logo" %>
+          </div>
+
+          <div class="header-right">
+            <ul class='lists-right'>
+              <% if user_signed_in? %>
+                <li>
+                  <%= link_to current_user.nickname, "/users/#{current_user.id}", class: "user-nickname" %>
+                </li>
+                <li>
+                  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
+                </li>
+              <% else %>
+                <li>
+                  <%= link_to 'ログイン', new_user_session_path, class: "login" %>
+                </li>
+                <li>
+                  <%= link_to '新規登録', new_user_registration_path, class: "sign-up" %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+
+        </div>
+      </header>
+
+      <div class="donokoe-container">
+        <p class="donokoe">言いなおす？</p>
+        <div class="koe-form">
+
+<%= form_with(model: @koe, id: "form", local: true) do |form| %>
+  <div class="koe-form1">
+    <%= form.text_area :text, id: "content", class: "koe-form01", rows: "10", cols: "16", maxlength: "100" %>
+  </div>
+  <div class="koe-form2">
+    <%= form.submit 'かきなおす' , id: "submit" %>
+  </div>
+<% end %>
+
+      </div>
+
+
+      <footer>
+        <div class="footer-container">
+          <div class="menu-list-container">
+            <ul class="doors">
+              <li class="door01">
+                <a href="#">ノックをする</a>
+              </li>
+              <li class="door02">
+                <a href="#">たからばこ</a>
+              </li>
+              <li class="door03">
+                <a href="#">ろくおん部屋</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+  </body>
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

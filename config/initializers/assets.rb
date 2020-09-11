@@ -19,3 +19,9 @@ Rails.application.config.assets.precompile += %w(
   koes.css )
 Rails.application.config.assets.precompile += %w( 
   registration.css )
+Rails.application.config.assets.precompile += %w( 
+  koe.css )
+Rails.application.config.assets.precompile += %w( 
+  show.css )
+Rails.application.config.assets.precompile += %w( 
+  edit.css )
