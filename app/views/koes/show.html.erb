@@ -1,0 +1,98 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag 'show' %>
+<% end %>
+
+
+
+<!DOCTYPE html>
+<body>
+
+  <div class="container">
+
+    <header>
+      <div class="header-container">
+        
+        <div class="header-left">
+          <%= link_to "つながるぽすと", root_path, class: "logo" %>
+        </div>
+
+        <div class="header-right">
+          <ul class='lists-right'>
+            <% if user_signed_in? %>
+              <li>
+                <%= link_to current_user.nickname, "#", class: "user-nickname" %>
+              </li>
+              <li>
+                <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
+              </li>
+            <% else %>
+              <li>
+                <%= link_to 'ログイン', new_user_session_path, class: "login" %>
+              </li>
+              <li>
+                <%= link_to '新規登録', new_user_registration_path, class: "sign-up" %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+
+      </div>
+    </header>
+
+    <div class="post-container">
+
+      <div class="content-post">
+
+        <div class="post-date">
+          <%= @koe.created_at %>
+        </div>
+
+        <p><%= @koe.text %></p>
+      
+        <div class="under-menu">
+
+        <span class="name">
+          <a href="/users/<%= @koe.user.id %>">
+          <%= @koe.user.nickname %>
+          </a>
+        </span>
+
+        <ul class="only-user">
+          <li class="edit">
+              <%= link_to edit_ko_path(@koe.id), method: :get do %>
+                <i class="far fa-edit"></i>
+              <% end %>
+          </li>
+          <li class="destroy">
+            <%= link_to ko_path(@koe.id), method: :delete do %>
+              <i class="fas fa-trash-alt"></i>
+            <% end %>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-container">
+        <div class="menu-list-container">
+          <ul class="doors">
+            <li class="door01">
+              <%= link_to "ノックをする", koes_path %>
+            </li>
+            <li class="door02">
+              <a href="#">たからばこ</a>
+            </li>
+            <li class="door03">
+              <a href="#">ろくおん部屋</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </div>
+  
+</body>
+
+
+</html>
